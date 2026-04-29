@@ -1,37 +1,33 @@
-# 🔁 Leetcode 32.Longest Valid Parentheses
+<h2><a href="https://leetcode.com/problems/longest-valid-parentheses">Longest Valid Parentheses</a></h2> <img src='https://img.shields.io/badge/Difficulty-Hard-red' alt='Difficulty: Hard' /><hr><p>Given a string containing just the characters <code>&#39;(&#39;</code> and <code>&#39;)&#39;</code>, return <em>the length of the longest valid (well-formed) parentheses </em><span data-keyword="substring-nonempty"><em>substring</em></span>.</p>
 
-🧩 Problem
-Given a string containing just the characters '(' and ')', return the length of the longest valid (well-formed) parentheses substring.
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-📌 Examples
+<pre>
+<strong>Input:</strong> s = &quot;(()&quot;
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> The longest valid parentheses substring is &quot;()&quot;.
+</pre>
 
-Example 1
-Input: s = "(()"
-Output: 2
+<p><strong class="example">Example 2:</strong></p>
 
-Example 2
-Input: s = ")()())"
-Output: 4
+<pre>
+<strong>Input:</strong> s = &quot;)()())&quot;
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> The longest valid parentheses substring is &quot;()()&quot;.
+</pre>
 
-Example 3
-Input: s = ""
-Output: 0
+<p><strong class="example">Example 3:</strong></p>
 
-🧠 Approach
-Use a stack to store indices
+<pre>
+<strong>Input:</strong> s = &quot;&quot;
+<strong>Output:</strong> 0
+</pre>
 
-Initialize stack with -1 (base index)
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-Traverse the string:
-- If '(' → push index into stack
-- If ')' → pop from stack
-  - If stack becomes empty → push current index (reset base)
-  - Else → calculate length using: current index - top of stack
-
-Keep updating maximum length
-
-# 🎯 Key Insight
-Store indices instead of characters and use a base index to calculate the length of valid substrings.
-
-# Tags
-Stack, String, Dynamic Programming
+<ul>
+	<li><code>0 &lt;= s.length &lt;= 3 * 10<sup>4</sup></code></li>
+	<li><code>s[i]</code> is <code>&#39;(&#39;</code>, or <code>&#39;)&#39;</code>.</li>
+</ul>
