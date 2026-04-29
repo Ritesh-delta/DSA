@@ -33,5 +33,5 @@ Keep updating maximum length
 # 🎯 Key Insight
 Store indices instead of characters and use a base index to calculate the length of valid substrings.
 
-Tags
+# Tags
 Stack, String, Dynamic Programming
