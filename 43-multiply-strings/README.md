@@ -1,20 +1,49 @@
-<h2><a href="https://leetcode.com/problems/multiply-strings">Multiply Strings</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>Given two non-negative integers <code>num1</code> and <code>num2</code> represented as strings, return the product of <code>num1</code> and <code>num2</code>, also represented as a string.</p>
+🧩 43. Multiply Strings
+📌 Problem
 
-<p><strong>Note:</strong>&nbsp;You must not use any built-in BigInteger library or convert the inputs to integer directly.</p>
+Given two numbers in string format, return their product as a string without converting them to integers.
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-<pre><strong>Input:</strong> num1 = "2", num2 = "3"
-<strong>Output:</strong> "6"
-</pre><p><strong class="example">Example 2:</strong></p>
-<pre><strong>Input:</strong> num1 = "123", num2 = "456"
-<strong>Output:</strong> "56088"
-</pre>
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+💡 Idea
 
-<ul>
-	<li><code>1 &lt;= num1.length, num2.length &lt;= 200</code></li>
-	<li><code>num1</code> and <code>num2</code> consist of digits only.</li>
-	<li>Both <code>num1</code> and <code>num2</code>&nbsp;do not contain any leading zero, except the number <code>0</code> itself.</li>
-</ul>
+At first, I thought of converting the strings to integers, but that’s not allowed ❌
+
+So I treated it like normal multiplication we do on paper:
+
+Multiply digit by digit
+Keep track of positions
+Handle carry carefully
+⚙️ Approach
+Create a result array of size n + m
+Traverse both strings from right to left
+Multiply digits and add to correct position
+Store carry and remainder properly
+Convert final result to string and remove leading zeros
+🔑 Key Point
+
+If we multiply digits at index i and j, their result contributes to:
+
+Current position
+Carry goes to previous position
+
+👉 This index mapping is the main trick.
+
+🧪 Example
+
+Input:
+
+num1 = "123"
+num2 = "456"
+
+Output:
+
+"56088"
+⏱️ Complexity
+Time: O(n * m)
+Space: O(n + m)
+📚 What I Learned
+How to simulate multiplication without integers
+Working with strings and arrays together
+Importance of index handling and carry
+📝 Notes
+Edge case: if any number is "0" → return "0"
+Remove leading zeros in final result
