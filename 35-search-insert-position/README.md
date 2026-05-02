@@ -1,35 +1,41 @@
-<h2><a href="https://leetcode.com/problems/search-insert-position">Search Insert Position</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>
+# 🧩 35. Search Insert Position
 
-<p>You must&nbsp;write an algorithm with&nbsp;<code>O(log n)</code> runtime complexity.</p>
+## 📌 Problem  
+Given a sorted array of distinct integers and a target value, return the index if the target is found.  
+If not, return the index where it would be inserted in order.
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+---
 
-<pre>
-<strong>Input:</strong> nums = [1,3,5,6], target = 5
-<strong>Output:</strong> 2
-</pre>
+## 💡 Idea  
 
-<p><strong class="example">Example 2:</strong></p>
+Since the array is sorted and we need O(log n), brute force is not a good option ❌  
 
-<pre>
-<strong>Input:</strong> nums = [1,3,5,6], target = 2
-<strong>Output:</strong> 1
-</pre>
+So the idea is to use **Binary Search**:
 
-<p><strong class="example">Example 3:</strong></p>
+- Compare middle element with target  
+- Move left or right accordingly  
+- If not found, return the correct insert position  
 
-<pre>
-<strong>Input:</strong> nums = [1,3,5,6], target = 7
-<strong>Output:</strong> 4
-</pre>
+---
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+## ⚙️ Approach  
 
-<ul>
-	<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
-	<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
-	<li><code>nums</code> contains <strong>distinct</strong> values sorted in <strong>ascending</strong> order.</li>
-	<li><code>-10<sup>4</sup> &lt;= target &lt;= 10<sup>4</sup></code></li>
-</ul>
+- Initialize `left = 0` and `right = len(nums) - 1`  
+- Find mid index  
+- If `nums[mid] == target` → return mid  
+- If `nums[mid] < target` → move to right half  
+- Else → move to left half  
+- When loop ends, `left` will be the correct insert position  
+
+---
+
+## 🔑 Key Point  
+
+Even if the target is not present,  
+👉 the `left` pointer always ends at the correct insert position.
+
+---
+
+## 🧪 Example  
+
+**Input:**
