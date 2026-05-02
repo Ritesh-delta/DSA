@@ -39,3 +39,34 @@ Even if the target is not present,
 ## 🧪 Example  
 
 **Input:**
+
+nums = [1,3,5,6]
+target = 2
+
+
+**Output:**
+
+1
+
+
+---
+
+## ⏱️ Complexity  
+
+- Time: O(log n)  
+- Space: O(1)  
+
+---
+
+## 📚 What I Learned  
+
+- How Binary Search works in real problems  
+- How to find insert position without extra steps  
+- Importance of pointer movement  
+
+---
+
+## 📝 Notes  
+
+- Array is sorted → Binary Search is the best choice  
+- Return `left` at the end if target not found  
