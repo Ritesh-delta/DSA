@@ -43,4 +43,6 @@ This reduces the time complexity to **O(log n)**.
 
 ---
 
+## 📝 Notes
 
+This is a common interview problem and a good example of how a simple idea can be optimized significantly using the right approach.
