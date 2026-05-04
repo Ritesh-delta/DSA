@@ -1,31 +1,102 @@
-<h2><a href="https://leetcode.com/problems/unique-paths">Unique Paths</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>There is a robot on an <code>m x n</code> grid. The robot is initially located at the <strong>top-left corner</strong> (i.e., <code>grid[0][0]</code>). The robot tries to move to the <strong>bottom-right corner</strong> (i.e., <code>grid[m - 1][n - 1]</code>). The robot can only move either down or right at any point in time.</p>
+# 🧩 LeetCode 62 — Unique Paths
 
-<p>Given the two integers <code>m</code> and <code>n</code>, return <em>the number of possible unique paths that the robot can take to reach the bottom-right corner</em>.</p>
+## 📌 Problem Statement
 
-<p>The test cases are generated so that the answer will be less than or equal to <code>2 * 10<sup>9</sup></code>.</p>
+A robot is placed at the **top-left corner** of an `m x n` grid 🤖.  
+It can only move in two directions:
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-<img src="https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png" style="width: 400px; height: 183px;" />
-<pre>
-<strong>Input:</strong> m = 3, n = 7
-<strong>Output:</strong> 28
-</pre>
+➡️ Right  
+⬇️ Down  
 
-<p><strong class="example">Example 2:</strong></p>
+The goal is to reach the **bottom-right corner** of the grid.
 
-<pre>
-<strong>Input:</strong> m = 3, n = 2
-<strong>Output:</strong> 3
-<strong>Explanation:</strong> From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:
-1. Right -&gt; Down -&gt; Down
-2. Down -&gt; Down -&gt; Right
-3. Down -&gt; Right -&gt; Down
-</pre>
+👉 You need to find the total number of **unique paths** possible.
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+---
 
-<ul>
-	<li><code>1 &lt;= m, n &lt;= 100</code></li>
-</ul>
+## 🧪 Example
+
+### Example 1
+
+Input: m = 3, n = 7
+Output: 28
+
+
+### Example 2
+
+Input: m = 3, n = 2
+Output: 3
+
+
+📌 Explanation:  
+The robot can take different combinations of right and down moves to reach the destination.
+
+---
+
+## 💡 Idea / Approach
+
+### 🧠 Dynamic Programming
+
+Each cell in the grid represents:
+
+👉 Number of ways to reach that cell
+
+We build the answer step by step:
+
+- First row → only 1 way (move right ➡️)
+- First column → only 1 way (move down ⬇️)
+- Other cells → sum of top + left cells
+
+---
+
+## 🔄 Key Insight
+
+To reach any cell:
+- From above ⬆️
+- From left ⬅️  
+
+So:
+
+👉 Total ways = top + left
+
+---
+
+## ⚡ Optimized Approach
+
+Instead of using a full grid, we can reduce space using a single row array and update values iteratively.
+
+---
+
+## 🧮 Mathematical Insight
+
+This problem can also be solved using combinatorics:
+
+- Total moves = `(m - 1) + (n - 1)`
+- Choose positions of down (or right) moves
+
+👉 It becomes a combinations problem
+
+---
+
+## ⏱ Complexity
+
+- Time Complexity: `O(m × n)`
+- Space Complexity:
+  - `O(m × n)` (basic DP)
+  - `O(n)` (optimized DP)
+
+---
+
+## 🎯 What I Learned
+
+✔ Grid-based DP patterns  
+✔ Optimizing space complexity  
+✔ Connection between DP and combinatorics  
+
+---
+
+## 🏷️ Tags
+
+`#DynamicProgramming` `#Math` `#GridProblems` `#Combinatorics`
+
+---
